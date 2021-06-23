@@ -77,11 +77,23 @@
 # prompt the user to input age and restrict to enter in digits only
 # check if the data is in digits display it back to the user if not in digits prompt the user with message to enter in digits
 
-age = input("What is your age?  ")
+# age = input("What is your age?  ")
+#
+# while age.isdigit() != True:
+#     print("Please enter your age in digits.")
+#     age = input("What is your age?  ")
+#     if age.isdigit() == True:
+#         print(f"Your age is {age}")
+#         break
 
-while age.isdigit() != True:
-    print("Please enter your age in digits.")
+# end loop without break function
+
+user_prompt = True
+
+while user_prompt:
     age = input("What is your age?  ")
-    if age.isdigit() == True:
+    if age.isdigit() and int(age) < 150:
         print(f"Your age is {age}")
-        break
+        user_prompt = False
+    else:
+        print("Please enter a valid age in digits under 150.")

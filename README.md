@@ -133,3 +133,17 @@ while age.isdigit() != True:
 - the above code prompts the user for their age and checks if it is in `int` form with the `.isdigit()` function
 - if the data is not in this format it prints the error message and re prompts the user and restarts the loop
 - when the condition is met, the user's age is returned and the `while` loop is stopped with the `break`
+- loops can also be ended without a `break` function
+```python
+user_prompt = True
+
+while user_prompt:
+    age = input("What is your age?  ")
+    if age.isdigit() and int(age) < 150:
+        print(f"Your age is {age}")
+        user_prompt = False
+    else:
+        print("Please enter a valid age in digits under 150.")
+```
+- the above code will keep prompting the user until a valid age is input
+- when a valid age is input the `user_prompt` is set to `False` and therefore the `while` condition is no longer met, so the loop does not continue
